@@ -40,7 +40,7 @@ const authorController = {
     deleteAuthor: async (req, res) => {
         try {
             await Author.findByIdAndDelete(req.params.id)
-            await Book.updateMany({author: req.params.id}, {$push: {author: req.params.id}})
+            await Book.updateMany({author: req.params.id}, {author: null})
             res.status(200).json("Delete successfully");
         } catch (error) {
             res.status(500).json(error)

@@ -43,7 +43,7 @@ const bookController = {
     deleteBook: async(req, res) => {
       try {
         await Book.findByIdAndDelete(req.params.id)
-        await Author.updateMany({book: req.params.id}, {$push: {book: req.params.id}})
+        await Author.updateMany({book: req.params.id}, {$pull: {book: req.params.id}})
         res.status(200).json("Delete success !");
       } catch (error) {
         res.status(200).json(error)
