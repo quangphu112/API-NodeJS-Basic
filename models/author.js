@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const authorSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -14,5 +15,5 @@ const authorSchema = new mongoose.Schema({
     }]
 })
 
-const Author = mongoose.model("Author", authorSchema);
-module.exports = Author;
+let Author = mongoose.model("Author", authorSchema)
+module.exports =  Author 

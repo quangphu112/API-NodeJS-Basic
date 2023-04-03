@@ -22,7 +22,6 @@ app.listen(8000, () => {
     console.log("Server is running...")
 })
 
-
 // Routes product
 app.use("/v1/book", bookRoute);
 app.use("/v1/author", authorRoute);
